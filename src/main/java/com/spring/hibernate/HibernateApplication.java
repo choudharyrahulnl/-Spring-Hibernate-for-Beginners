@@ -1,8 +1,6 @@
 package com.spring.hibernate;
 
-import com.spring.hibernate.entities.Course;
-import com.spring.hibernate.entities.Instructor;
-import com.spring.hibernate.entities.InstructorDetail;
+import com.spring.hibernate.entities.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.extern.slf4j.Slf4j;
@@ -248,6 +246,8 @@ public class HibernateApplication implements CommandLineRunner {
 
 
 		/**
+		 * ONE-TO-MANY BIDIRECTIONAL INSTRUCTOR & COURSE
+		 *
 		 * ONE-TO-MANY By Default LAZY
 		 * Fetching Instructor will only fetch instructor, it will not fetch associated Courses
 		 * If we fetch instructor.getCourses() then also it will not fetch associated Courses
@@ -258,9 +258,61 @@ public class HibernateApplication implements CommandLineRunner {
 		 * ONE-TO-MANY fetch type change to FetchType.EAGER
 		 * Fetching Instructor will fetch Instructor and it's associated Courses
 		 */
-		Instructor instructor = entityManager.find(Instructor.class, 1);
-		log.info(instructor.toString());
-		log.info(instructor.getCourses().toString());
+
+//		Instructor instructor = entityManager.find(Instructor.class, 1);
+//		log.info(instructor.toString());
+//		log.info(instructor.getCourses().toString());
+
+		/**
+		 * ONE-TO-MANY UNIDIRECTIONAL COURSE & REVIEWS
+		 *
+		 *
+		 *
+		 */
+
+//		Review good = Review.builder().comment("it was good course").build();
+//		Review bad = Review.builder().comment("it was not so good course").build();
+//
+//		Course course = entityManager.find(Course.class,1);
+//		course.add(good);
+//		course.add(bad);
+
+
+//		Course course = entityManager.find(Course.class,1);
+//		log.info(course.toString());
+//		log.info(course.getReviews().toString());
+
+
+		/**
+		 *  MANY-TO-MANY COURSE & STUDENT
+		 */
+//		Course course = entityManager.find(Course.class,1);
+//
+//		Student rahul = Student.builder().firstName("rahul").lastName("choudhary").email("rahul@gmail.com").build();
+//		Student ravi = Student.builder().firstName("ravi").lastName("baswan").email("ravi@gmail.com").build();
+//
+//		course.add(rahul);
+//		course.add(ravi);
+//
+//		entityManager.persist(rahul);
+//		entityManager.persist(ravi);
+
+
+//		Course course = entityManager.find(Course.class,2);
+//		Student rahul = entityManager.find(Student.class, 1);
+//		course.add(rahul);
+//		Course course2 = entityManager.find(Course.class,3);
+//		course2.add(rahul);
+
+
+//		Course course = entityManager.find(Course.class,1);
+//		log.info(course.toString());
+//		log.info(course.getStudents().toString());
+
+
+//		Student student = entityManager.find(Student.class, 1);
+//		log.info(student.toString());
+//		log.info(student.getCourses().toString());
 
 	}
 }

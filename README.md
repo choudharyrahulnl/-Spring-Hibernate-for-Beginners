@@ -155,6 +155,15 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
     <li>Instructor @OneToMany Course</li>
     <li>Course @ManyToOne Instructor</li>
     <li>Course @OneToMany Reviews</li>
+    <li>@JoinColumn: 
+        <ul>
+            <li>If the join is for a OneToOne or ManyToOne mapping then source entity</li>
+            <li>If the join is for a unidirectional OneToMany mapping then target entity</li>
+            <li>If the join is for a ManyToMany mapping or for a OneToOne or bidirectional ManyToOne/OneToMany mapping then join table</li>
+            <li>If the join is for an element collection then in collection table</li>
+        </ul>
+    </li>
+    
 </ul>
 
 <h3>JPA Buddy: https://www.youtube.com/watch?v=DC6FrC4olhE </h3>
