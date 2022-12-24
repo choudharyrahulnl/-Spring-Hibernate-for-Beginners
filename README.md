@@ -136,7 +136,6 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
 <h3>One To One: </h3>
 <ul>
     <li>Instructor & Instructor Detail</li>
-    <li></li>
 </ul>
 
 <h3>One To Many: </h3>
@@ -163,7 +162,7 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
             <li>If the join is for an element collection then in collection table</li>
         </ul>
     </li>
-    
+
 </ul>
 
 <h3>JPA Buddy: https://www.youtube.com/watch?v=DC6FrC4olhE </h3>
@@ -183,3 +182,79 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
         </ul> 
     </li>
 </ul>
+
+<h3>AOP: Proxy Design Pattern</h3>
+<ul>
+    <li>Aspect encapsulate cross-cutting logics like logging, security, transactions, audit logs(who,what,when,where), exception handling, api management</li>
+    <li>Same Aspect Class (logging, security) can be applied to multiple locations based on configuration</li>
+    <li>Code for Aspect is defined in a single class</li>
+    <li>Business code in application will be cleaner</li>
+    <li>Configurable, based on configuration we can apply aspect to multiple locations </li>
+    <li></li>
+</ul>
+
+<h3>AOP Terminology: </h3>
+<ul>
+    <li>Aspect: module of code for cross-cutting concern like logging, security</li>
+    <li>Advice: what action is taken and when it should be applied</li>
+    <li>Joint Point: when to apply code during program execution</li>
+    <li>Pointcut: predicate expression for where advice should be applied</li>
+</ul>
+
+<h3>Advice Type</h3>
+<ul>
+    <li>@Before Advice: run before the method</li>
+    <li>@AfterFinally Advice: rin after the method (finally)</li>
+    <li>@AfterReturning Advice: run after the method (success execution)</li>
+    <li>@AfterThrowing Advice: run after method (if exception thrown)</li>
+    <li>@Around Advice: run before and after method</li>
+</ul>
+
+<h3>Weaving: </h3>
+<ul>
+    <li>Connecting aspects to target objects to create an advice object</li>
+    <li>Type of weaving: compile-time, load-time, run-time</li>
+    <li>Performance: runtime weaving is the slowest</li>
+</ul>
+
+<h3>Spring AOP vs AspectJ: </h3>
+<ul>
+    <li>Spring AOP:
+        <ul>
+            <li>Support only method level join points</li>
+            <li>run-time code weaving (slower than aspectJ very negligible)</li>
+            <li>light weight implementation of AOP</li>
+            <li>solves common problem in enterprise application</li>
+        </ul>
+    </li>
+    <li>AspectJ:
+        <ul>
+            <li>Support method-level, constructor, field join points</li>
+            <li>run-time, compile-time, post compile-time & load time code weaving</li>
+            <li>if we have complex requirement then we can use AspectJ</li>
+        </ul>
+    </li>
+</ul>
+<p>Books: AspectJ in Action by Raminvas Laddad & Aspect-Oriented Development with the use case by Ivar Jacobson & Pan-wei ng</p>
+
+
+<h3>Spring AOP Examples: </h3>
+<ul>
+    <li>execution(modifier-pattern? return-type-pattern declaring-type-pattern? method-name-pattern(param-pattern) throws-pattern? ) </li>
+    <li>all ? are optional</li>
+    <li>@Before("execution(public void com.spring.hibernate.aop.AccountDao.addAccount())")</li>
+    <li>@Before("execution(public void addAccount())"): All addAccount() method</li>
+    <li>@Before("execution(public void add*())"): All method starts with add</li>
+    <li>@Before("execution(public VerificationResult processCreditCard*())"): All method starts with processCreditCard & return type VerificationResult</li>
+    <li>@Before("execution(public * processCreditCard*())"): All method starts with processCreditCard & return type any</li>
+    <li>@Before("execution(* processCreditCard*())"): All method starts with processCreditCard & return type any</li>
+    <li>Param Pattern: () - matches a method with no param</li>
+    <li>Param Pattern: (*) - matches a method with 1 argument of any type</li>
+    <li>Param Pattern: (..) - matches a method with 0 or more argument of any type</li>
+    <li>@Before("execution(* addAccount(com.spring.hibernate.aop.Account))")</li>
+    <li>@Before("execution(* addAccount(..))")</li>
+    <li>@Before("execution(* addAccount(com.spring.hibernate.aop.Account, ..))")</li>
+    <li>Package Pattern: @Before("execution(* com.spring.hibernate.aop.*.addAccount(..))") : Any class under this package</li>
+    <li>Package Pattern: @Before("execution(* com.spring.hibernate.aop.*.*(..))") : Any Class & Any Method under this package</li>
+</ul>
+
