@@ -242,7 +242,7 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
 <ul>
     <li>execution(modifier-pattern? return-type-pattern declaring-type-pattern? method-name-pattern(param-pattern) throws-pattern? ) </li>
     <li>all ? are optional</li>
-    <li>@Before("execution(public void com.spring.hibernate.aop.AccountDao.addAccount())")</li>
+    <li>@Before("execution(public void com.spring.hibernate.aopdemo.AccountDao.addAccount())")</li>
     <li>@Before("execution(public void addAccount())"): All addAccount() method</li>
     <li>@Before("execution(public void add*())"): All method starts with add</li>
     <li>@Before("execution(public VerificationResult processCreditCard*())"): All method starts with processCreditCard & return type VerificationResult</li>
@@ -251,10 +251,10 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
     <li>Param Pattern: () - matches a method with no param</li>
     <li>Param Pattern: (*) - matches a method with 1 argument of any type</li>
     <li>Param Pattern: (..) - matches a method with 0 or more argument of any type</li>
-    <li>@Before("execution(* addAccount(com.spring.hibernate.aop.Account))")</li>
+    <li>@Before("execution(* addAccount(com.spring.hibernate.aopdemo.Account))")</li>
     <li>@Before("execution(* addAccount(..))")</li>
-    <li>@Before("execution(* addAccount(com.spring.hibernate.aop.Account, ..))")</li>
-    <li>Package Pattern: @Before("execution(* com.spring.hibernate.aop.*.addAccount(..))") : Any class under this package</li>
-    <li>Package Pattern: @Before("execution(* com.spring.hibernate.aop.*.*(..))") : Any Class & Any Method under this package</li>
+    <li>@Before("execution(* addAccount(com.spring.hibernate.aopdemo.Account, ..))")</li>
+    <li>Package Pattern: @Before("execution(* com.spring.hibernate.aopdemo.*.addAccount(..))") : Any class under this package</li>
+    <li>Package Pattern: @Before("execution(* com.spring.hibernate.aopdemo.*.*(..))") : Any Class & Any Method under this package</li>
 </ul>
 

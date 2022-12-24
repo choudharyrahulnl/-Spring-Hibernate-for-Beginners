@@ -1,4 +1,4 @@
-package com.spring.hibernate.aop;
+package com.spring.hibernate.aopdemo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -103,13 +103,13 @@ public class MyLoggingAspect {
      * We need to pass  JoinPoint as an argument to the advice
      */
 
-    @Pointcut("execution(public void com.spring.hibernate.aop.*.*(..))")
+    @Pointcut("execution(public void com.spring.hibernate.aopdemo.*.*(..))")
     private void forDaoPackage() {}
 
-    @Pointcut("execution(public void com.spring.hibernate.aop.*.get*(..))")
+    @Pointcut("execution(public void com.spring.hibernate.aopdemo.*.get*(..))")
     private void getter() {}
 
-    @Pointcut("execution(public void com.spring.hibernate.aop.*.set*(..))")
+    @Pointcut("execution(public void com.spring.hibernate.aopdemo.*.set*(..))")
     private void setter() {}
 
     @Pointcut("forDaoPackage() && !(getter() || setter())")
@@ -143,7 +143,7 @@ public class MyLoggingAspect {
      *
      * This will run if method throws exception
      */
-    @AfterThrowing(pointcut = "execution(* com.spring.hibernate.aop.AccountDao.findAllUsers(..))", throwing = "ex") // Pointcut Expression
+    @AfterThrowing(pointcut = "execution(* com.spring.hibernate.aopdemo.AccountDao.findAllUsers(..))", throwing = "ex") // Pointcut Expression
     public void loggingAllAfterThrowingAdvice(JoinPoint joinPoint, Throwable ex) {
         log.info("==> Exception " + ex.getMessage());
         log.info("Executing Logging with @AfterThrowing advice on all method(any num of argument))");
@@ -181,7 +181,7 @@ public class MyLoggingAspect {
      *
      * We will get proceeding joint point / handle to execute target method
      */
-    @Around("execution(* com.spring.hibernate.aop.AccountDao.fortuneService(..))") // Pointcut Expression
+    @Around("execution(* com.spring.hibernate.aopdemo.AccountDao.fortuneService(..))") // Pointcut Expression
     public Object loggingAllAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         long begin = System.currentTimeMillis();
@@ -214,7 +214,7 @@ public class MyLoggingAspect {
      * AfterReturning advice which holds result
      * This will run if method return successfully that mean no exception
      */
-    @AfterReturning(pointcut = "execution(* com.spring.hibernate.aop.AccountDao.findAllUsers(..))", returning = "result") // Pointcut Expression
+    @AfterReturning(pointcut = "execution(* com.spring.hibernate.aopdemo.AccountDao.findAllUsers(..))", returning = "result") // Pointcut Expression
     public void loggingAllAfterReturningAdvice(JoinPoint joinPoint, List<String> result) {
 
         // return

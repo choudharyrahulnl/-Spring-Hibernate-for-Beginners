@@ -1,4 +1,4 @@
-package com.spring.hibernate.aop;
+package com.spring.hibernate.aopdemo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,7 +8,7 @@ public class AopMainApp {
 
     public static void main(String[] args) {
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AopConfiguration.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AOPConfig.class);
 
         AccountDao accountDao = context.getBean("accountDao", AccountDao.class);
         MembershipDao memberShipDao = context.getBean("membershipDao", MembershipDao.class);

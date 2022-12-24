@@ -1,4 +1,4 @@
-package com.spring.hibernate.aop;
+package com.spring.hibernate.aopdemo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -105,13 +105,13 @@ public class MySecurityAspect {
      * We need to pass  JoinPoint as an argument to the advice
      */
 
-    @Pointcut("execution(public void com.spring.hibernate.aop.*.*(..))")
+    @Pointcut("execution(public void com.spring.hibernate.aopdemo.*.*(..))")
     private void forDaoPackage() {}
 
-    @Pointcut("execution(public void com.spring.hibernate.aop.*.get*(..))")
+    @Pointcut("execution(public void com.spring.hibernate.aopdemo.*.get*(..))")
     private void getter() {}
 
-    @Pointcut("execution(public void com.spring.hibernate.aop.*.set*(..))")
+    @Pointcut("execution(public void com.spring.hibernate.aopdemo.*.set*(..))")
     private void setter() {}
 
     @Pointcut("forDaoPackage() && !(getter() || setter())")
