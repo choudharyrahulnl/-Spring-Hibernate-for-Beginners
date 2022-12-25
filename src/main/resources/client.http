@@ -1,0 +1,72 @@
+###
+POST http://localhost:8080/v1/students
+Content-Type: application/json
+
+{
+  "firstName": "Rahul",
+  "lastName": "Choudhary",
+  "email": "no-reply@gmail.com"
+}
+
+
+###
+POST http://localhost:8080/v1/students
+Content-Type: application/json
+
+{
+  "firstName": "Shalu",
+  "lastName": "Baliyan",
+  "email": "no-reply@gmail.com"
+}
+
+
+###
+GET http://localhost:8080/v1/students
+Content-Type: application/json
+
+
+###
+PUT http://localhost:8080/v1/students
+Content-Type: application/json
+
+{
+  "id": 2,
+  "lastName": "Choudhary"
+}
+
+
+###
+GET http://localhost:8080/v1/students
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/v1/students
+
+
+###
+GET http://localhost:8080/v1/students/filter?lastName=Choudhary
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/v1/students/1
+Content-Type: application/json
+
+
+###
+DELETE http://localhost:8080/v1/students/2
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/v1/students/by-email?email=gmail.com
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/v1/students
+
+
+###
+GET http://localhost:8080/v1/students/{{id}}

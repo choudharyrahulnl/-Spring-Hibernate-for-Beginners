@@ -258,3 +258,28 @@ Configure Spring Container: XMl || Java Annotation || Java Source Code
     <li>Package Pattern: @Before("execution(* com.spring.hibernate.aopdemo.*.*(..))") : Any Class & Any Method under this package</li>
 </ul>
 
+
+<h3>Spring Security: </h3>
+<ul>
+    <li>Spring Security with servlet filters</li>
+    <li>Servlet filters are used to pre-process / post-process web requests</li>
+    <li>Servlet filters can route web requests based on security logic</li>
+    <li>Spring provides bulk of security functionality with servlet filters</li>
+    <li>Login Methods Http Basic Authentication, Default login form, Custom login form</li>
+</ul>
+
+
+<h3>HTTP: </h3>
+<ul>
+    <li>100-199: Information</li>
+    <li>200-299: Successful</li>
+    <li>300-399: Redirection</li>
+    <li>400-499: Client Error (401 Authentication required & 404 Not Found)</li>
+    <li>500-599: Server Error (500 Internal Server Error)</li>
+</ul>
+
+<h3>HTTP Request: </h3>
+<ul>
+    <li>/api/students/{studentId} @PathVariable int studentId</li>
+    <li>/api/students?studentId=1 @RequestParam("studentId") int studentId</li>
+</ul>
