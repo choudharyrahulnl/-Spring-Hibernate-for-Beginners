@@ -1,0 +1,12 @@
+{
+  "id" : 1,
+  "firstName" : "Rahul",
+  "lastName" : "Choudhary",
+  "active" : true,
+  "address" : {
+    "street" : "Voermanweg 570",
+    "city" : "Rotterdam",
+    "country" : "Netherlands"
+  },
+  "languages" : [ "Java", "Spring", "Angular" ]
+}
